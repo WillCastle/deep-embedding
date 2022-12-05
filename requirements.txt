@@ -1,0 +1,6 @@
+lightning-bolts
+pandas
+ipython
+ipykernel
+jupyter
+yellowbrick
