@@ -1,0 +1,70 @@
+{
+    "[cfg]": {
+        "editor.formatOnSave": true,
+    },
+    "cSpell.language": "en-GB",
+    "cSpell.words": [
+        "arange",
+        "conda",
+        "cuda",
+        "cudatoolkit",
+        "cython",
+        "gpmodel",
+        "Initialising",
+        "ipython",
+        "LBFGS",
+        "Matern",
+        "matplotlib",
+        "numpyro",
+        "optim",
+        "Optimisation",
+        "Optimisers",
+        "pyro",
+        "scikit",
+        "seaborn",
+        "sklearn",
+        "skorch",
+        "Stabilises",
+        "torchaudio",
+        "torchvision",
+        "xlabel",
+        "xmin",
+        "ylabel"
+    ],
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.linkedEditing": true,
+    "files.trimTrailingWhitespace": true,
+    "javascript.referencesCodeLens.enabled": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.defaultInterpreterPath": "C:/Users/willf/DataScience/Repos/deep-embedding/Scripts/python.exe",
+    "python.analysis.extraPaths": [
+        "C:/Users/willf/DataScience/Repos/deep-embedding/Scripts/python.exe"
+    ],
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--max-line-length=120"
+    ],
+    "python.languageServer": "Pylance",
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.black": true,
+    "python.linting.blackArgs": ["--max-line-length=120"],
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "terminal.integrated.profiles.windows": {
+        "Git Bash": {
+        "path": "C:/Program Files/Git/bin/bash.exe",
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+}
