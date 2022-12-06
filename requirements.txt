@@ -4,3 +4,6 @@ ipython
 ipykernel
 jupyter
 yellowbrick
+pylint
+black
+flake8
