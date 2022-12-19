@@ -7,3 +7,4 @@ yellowbrick
 pylint
 black
 flake8
+torchviz
