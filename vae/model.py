@@ -27,4 +27,6 @@ test_input = torch.randn(
 test_output = vae(test_input)
 
 graph = make_dot(test_output.mean(), params=dict(vae.named_parameters()))
-graph.view(directory="C:/Users/willf/DataScience/Repos/deep-embedding/vae/graphs")
+graph.view(
+    directory="C:/Users/willf/DataScience/Repos/deep-embedding/vae/graphs"
+    )
