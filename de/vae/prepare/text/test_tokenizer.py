@@ -12,8 +12,8 @@ test_batch = [
     "text and words and tokens and stuff"
 ]
 
-test_tokenizer_path = "C:/Users/willf/DataScience/Repos/deep-embedding/prepare/text/test_data/test_bpe_tokenizer.json"
-base_data_path = Path("C:/Users/willf/DataScience/Repos/deep-embedding/prepare/text/test_data")
+test_tokenizer_path = "C:/Users/willf/DataScience/Repos/deep-embedding/de/vae/prepare/text/test_data/test_bpe_tokenizer.json"
+base_data_path = Path("C:/Users/willf/DataScience/Repos/deep-embedding/de/vae/prepare/text/test_data")
 data_paths = [str(path) for path in base_data_path.glob("**/*.txt")]
 
 tk = train_tokenizer(data_paths=data_paths, save_path=test_tokenizer_path)
