@@ -8,3 +8,5 @@ pylint
 black
 flake8
 torchviz
+transformers
+tokenizers
