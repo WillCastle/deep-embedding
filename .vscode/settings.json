@@ -54,7 +54,7 @@
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true,
     "python.linting.pylintEnabled": true,
-    "python.linting.pylintArgs": ["--generated-members", "torch.*"],
+    "python.linting.pylintArgs": ["--generated-members", "torch.*", "--max-line-length=120"],
     "python.linting.black": true,
     "python.linting.blackArgs": ["--max-line-length=120"],
     "python.linting.flake8Args": ["--max-line-length=120"],

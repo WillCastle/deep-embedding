@@ -12,8 +12,8 @@ test_batch = [
     "text and words and tokens and stuff"
 ]
 
-test_tokenizer_path = "C:/Users/willf/DataScience/Repos/data-science/data_science_toolkit/data_science_toolkit/Modelling/Perceiver/test_data/test_bpe_tokenizer.json"
-base_data_path = Path("C:/Users/willf/DataScience/Repos/data-science/data_science_toolkit/data_science_toolkit/Modelling/Perceiver/test_data")
+test_tokenizer_path = "C:/Users/willf/DataScience/Repos/deep-embedding/prepare/text/test_data/test_bpe_tokenizer.json"
+base_data_path = Path("C:/Users/willf/DataScience/Repos/deep-embedding/prepare/text/test_data")
 data_paths = [str(path) for path in base_data_path.glob("**/*.txt")]
 
 tk = train_tokenizer(data_paths=data_paths, save_path=test_tokenizer_path)
@@ -21,10 +21,10 @@ tk = train_tokenizer(data_paths=data_paths, save_path=test_tokenizer_path)
 
 encoded_batch: BatchEncoding = tk.encode_batch(test_batch)
 
-def training_mask(sequence: str, mask_probability: float | int):
+# def training_mask(sequence: str, mask_probability: float | int):
 
 
-    return sequence
+#     return sequence
 
 # encoding.input_ids[0, 22:31] = tk.token_to_id("[MASK]")
 
