@@ -6,6 +6,48 @@ import torch
 from torch import nn
 
 
+class TextInputLayer(nn.Module):
+    """
+    TODO.
+    """
+    def __init__(
+            self,
+            ):
+        """
+        TODO.
+        """
+        super().__init__()
+        self.
+
+    def forward(self, input_batch: torch.Tensor) -> torch.Tensor:
+        """
+        TODO.
+        """
+        encoded_batch =
+        return encoded_batch
+
+
+# class TextOutputLayer(nn.Module):
+#     """
+#     TODO.
+#     """
+#     def __init__(
+#             self,
+#             ):
+#         """
+#         TODO.
+#         """
+#         super().__init__()
+#         self.
+
+#     def forward(self, input_batch: torch.Tensor) -> torch.Tensor:
+#         """
+#         TODO.
+#         """
+#         encoded_batch =
+#         return encoded_batch
+
+
 class StackedEncoder(nn.Module):
     """
     TODO.

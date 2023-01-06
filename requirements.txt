@@ -4,6 +4,7 @@ ipython
 ipykernel
 jupyter
 yellowbrick
+nvidia-ml-py3  # (import pynvml) track GPU usage within python
 pylint
 black
 flake8
