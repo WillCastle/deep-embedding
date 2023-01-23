@@ -11,3 +11,4 @@ flake8
 torchviz
 transformers
 tokenizers
+torchview

@@ -92,6 +92,10 @@ class AttentiveRecurrentUnit(nn.Module):
 
 
 if __name__ == "__main__":
+    import graphviz
+    from torchview import draw_graph
+    graphviz.set_jupyter_format('png')
+
     # Input Parameters
     SOURCE_SEQ_LEN = 20
     TARGET_SEQ_LEN = 15
@@ -154,3 +158,27 @@ if __name__ == "__main__":
     print(f"LSTM_HIDDEN shape: {LSTM_HIDDEN.shape}\n")
     print(f"LSTM_CELL shape: {LSTM_CELL.shape}\n")
     print(f"ATTENTION_WEIGHTS shape: {ATTENTION_WEIGHTS.shape}\n")
+
+    # from torchviz import make_dot
+    # g = make_dot(OUTPUT_BATCH.mean(), params=dict(unit.named_parameters()))
+    # g.view(
+    #     directory="C:/Users/willf/DataScience/Repos/deep-embedding/vae/graphs",
+    #     )
+
+    # device='meta' -> no memory is consumed for visualization
+    model_graph = draw_graph(
+        model=unit,
+        input_data=dict(
+            input_batch=INPUT_BATCH,
+            lstm_hidden=LSTM_HIDDEN,
+            lstm_cell=LSTM_CELL,
+            attention_value=ATTENTION_VALUE,
+            attention_query=ATTENTION_QUERY,
+        ),
+        device='meta'
+        )
+    model_graph.visual_graph.view(
+        # filename="ARUGraph",
+        directory="C:/Users/willf/DataScience/Repos/deep-embedding/vae/graphs",
+        )
+    model_graph.visual_graph
