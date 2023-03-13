@@ -42,9 +42,9 @@
     "files.trimTrailingWhitespace": true,
     "javascript.referencesCodeLens.enabled": true,
     "python.analysis.typeCheckingMode": "basic",
-    "python.defaultInterpreterPath": "C:/Users/willf/DataScience/Repos/deep-embedding/Scripts/python.exe",
+    "python.defaultInterpreterPath": "C:/Users/willf/miniconda3/envs/de/python.exe",
     "python.analysis.extraPaths": [
-        "C:/Users/willf/DataScience/Repos/deep-embedding/Scripts/python.exe"
+        "C:/Users/willf/miniconda3/envs/de/python.exe"
     ],
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": [

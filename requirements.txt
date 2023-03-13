@@ -1,3 +1,4 @@
+bidict
 lightning-bolts
 pandas
 ipython
@@ -12,3 +13,4 @@ torchviz
 transformers
 tokenizers
 torchview
+torchdata

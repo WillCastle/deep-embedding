@@ -130,3 +130,6 @@ dmypy.json
 
 # Local notes
 local
+
+# data
+de/models/prepare/text/imdb_data
