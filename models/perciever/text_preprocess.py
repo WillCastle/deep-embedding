@@ -6,12 +6,25 @@ from tokenizers import (Tokenizer, decoders, models, pre_tokenizers,
                         processors, trainers)
 
 
-# TODO: write 'load_tokenizer'
+# TODO: write 'load_tokeniser'
+def load_tokeniser(tokeniser_path: str) -> Tokenizer:
+    """
+    TODO.
+        Args:
+            tokeniser_path: str -
+
+        Returns:
+
+    """
+    return Tokenizer.from_file(path=tokeniser_path)
+
+
 def train_tokeniser(
         data_paths: list[str],
         save_path: str = "bpe_tokeniser.json"
-        ) -> Tokenizer:
-    """TODO.
+    ) -> Tokenizer:
+    """
+    TODO.
         Args:
 
         Returns:
@@ -41,17 +54,17 @@ class TextPreprocessor():
     """
     def __init__(
             self,
-            tokenizer: Tokenizer,
+            tokeniser: Tokenizer,
             ):
-        self.tokenizer = tokenizer
+        self.tokeniser = tokeniser
 
     def __call__(self, text_batch: list[str]):
         sorted_batch = sorted(text_batch, key=len, reverse=True)
-        tokenized_batch = self.tokenizer.encode_batch(sorted_batch)
-        tokenized_batch = torch.Tensor(
-            [sequence.ids for sequence in tokenized_batch]
+        tokenised_batch = self.tokeniser.encode_batch(sorted_batch)
+        tokenised_batch = torch.Tensor(
+            [sequence.ids for sequence in tokenised_batch]
             ).int()
-        return tokenized_batch.T
+        return tokenised_batch.T
 
 
 
@@ -68,27 +81,32 @@ if __name__ == "__main__":
 
     from transformers.tokenization_utils_base import BatchEncoding
 
-    text_batch = [
+    # Setup
+    TEXT_BATCH = [
         "There are some unseen words here banana zen 😁 but also some seen text",
         "Lots of unknowns in this one I expect",
         "text and words and tokens and stuff"
     ]
+    TEST_TOKENISER_PATH = "C:/Users/willf/DataScience/Repos/deep-embedding/de/models/prepare/text/test_data/test_bpe_tokeniser.json"
+    BASE_DATA_PATH = Path("C:/Users/willf/DataScience/Repos/deep-embedding/de/models/prepare/text/test_data")
+    data_paths = [str(path) for path in BASE_DATA_PATH.glob("**/*.txt")]
 
-    test_tokenizer_path = "C:/Users/willf/DataScience/Repos/deep-embedding/de/vae/prepare/text/test_data/test_bpe_tokenizer.json"
-    base_data_path = Path("C:/Users/willf/DataScience/Repos/deep-embedding/de/vae/prepare/text/test_data")
-    data_paths = [str(path) for path in base_data_path.glob("**/*.txt")]
+    # Train tokeniser test
+    tk = train_tokeniser(data_paths=data_paths, save_path=TEST_TOKENISER_PATH)
+    encoded_batch: BatchEncoding = tk.encode_batch(TEXT_BATCH)
+    detokenised = tk.decode_batch(sequences=[encoding.ids for encoding in encoded_batch], skip_special_tokens=False)
+    print(detokenised, "\n", TEXT_BATCH)
 
-    tk = train_tokeniser(data_paths=data_paths, save_path=test_tokenizer_path)
+    # Load tokeniser test
+    tk = load_tokeniser(tokeniser_path=TEST_TOKENISER_PATH)
+    encoded_batch: BatchEncoding = tk.encode_batch(TEXT_BATCH)
+    detokenised = tk.decode_batch(sequences=[encoding.ids for encoding in encoded_batch], skip_special_tokens=False)
+    print(detokenised, "\n", TEXT_BATCH)
 
-    encoded_batch: BatchEncoding = tk.encode_batch(text_batch)
 
-    detokenized = tk.decode_batch(sequences=[encoding.ids for encoding in encoded_batch], skip_special_tokens=False)
 
-    text_preprocessor = TextPreprocessor(tokenizer=tk)
+    # text_preprocessor = TextPreprocessor(tokeniser=tk)
+    # print(text_preprocessor(TEXT_BATCH))
 
-    print(text_preprocessor(text_batch))
-
-    print(detokenized, "\n", text_batch)
-
-    os.remove(test_tokenizer_path)
+    # os.remove(test_tokeniser_path)
 

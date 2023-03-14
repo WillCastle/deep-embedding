@@ -132,4 +132,4 @@ dmypy.json
 local
 
 # data
-de/models/prepare/text/imdb_data
+models/prepare/text/imdb_data

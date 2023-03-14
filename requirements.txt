@@ -4,6 +4,7 @@ pandas
 ipython
 ipykernel
 jupyter
+objsize
 yellowbrick
 nvidia-ml-py3  # (import pynvml) track GPU usage within python
 pylint
